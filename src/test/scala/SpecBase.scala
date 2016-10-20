@@ -9,7 +9,6 @@ import org.scalacheck.Arbitrary._
 import org.scalacheck.Gen._
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalatest.concurrent.ScalaFutures
-import org.scalatest.mock.MockitoSugar
 import org.scalatest.prop.Checkers
 import org.scalatest.{Matchers, OptionValues, WordSpecLike}
 import play.api.libs.json.{JsObject, JsString}
@@ -21,7 +20,6 @@ trait SpecBase
     with ScalaFutures
     with OptionValues
     with Checkers
-    with MockitoSugar
     with XorMatchers
    // with AvroModule
     with LazyLogging {
