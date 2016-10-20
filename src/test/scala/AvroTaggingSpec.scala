@@ -20,14 +20,14 @@ class AvroTaggingSpec extends SpecBase {
       val s2  = AvroSchema[Message]
       val s3 = AvroSchema[MessageStore]
       */
-      val s4 = AvroSchema[ConversationState]
+      val schema = AvroSchema[ConversationState]
 
       /*
       println("UserAction ->" + s1)
       println("Message->" + s2)
       println("MessageStore->" + s3)
       */
-      println("ConversationState->" + s4)
+      println("ConversationState->" + schema)
 
 
 

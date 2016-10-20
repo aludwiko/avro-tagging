@@ -6,6 +6,6 @@ import com.giampaolotrapasso.avrotagging.domain._
 case class DeviceState(userId: UserId = UninitializedId,
                        userName: Option[String] = None,
                        deviceId: DeviceId = uninitializedDeviceId,
-                      // undeliveredMessages: List[OutMessage] = List.empty,
+                       // undeliveredMessages: List[OutMessage] = List.empty,
                        encodedPublicKey: Option[String] = None,
                        mutedConversations: Set[ConversationId] = Set.empty)
