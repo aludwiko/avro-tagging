@@ -1,6 +1,6 @@
-package com.giampaolotrapasso.avrotagging
+package com.avrotagging
 
-import com.giampaolotrapasso.avrotagging.domain.MessageId
+import com.avrotagging.domain.MessageId
 
 case class Message(uuid: MessageId,
                    position: Int,

@@ -1,4 +1,4 @@
-package com.giampaolotrapasso.avrotagging
+package com.avrotagging
 
 import java.util.UUID
 

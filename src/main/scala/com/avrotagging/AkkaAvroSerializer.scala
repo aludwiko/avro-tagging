@@ -1,14 +1,10 @@
-package com.giampaolotrapasso.avrotagging
+package com.avrotagging
 
 import akka.serialization.SerializerWithStringManifest
-// IDE will show following import as unused. Don't remove them, otherwise avro4s will not work.
-
 // IDE will show following import as unused. Don't remove them, otherwise avro4s will not work.
 import com.sksamuel.avro4s._
 import DateTimeCustomMapping._
 import UserIdCustomMapping._
-import VisibilityMapping._
-import CardinalityMapping._
 import MessageIdCustomMapping._
 import MediaIdCustomMapping._
 import DeviceIdCustomMapping._
@@ -16,7 +12,7 @@ import ConversationIdCustomMapping._
 import RequestIdCustomMapping._
 import TimestampCustomMapping._
 
-class AkkaAvroSerializer[T](avroSerializer: AvroSerializer) extends SerializerWithStringManifest {
+class AkkaAvroSerializer(avroSerializer: AvroSerializer) extends SerializerWithStringManifest {
 
   def this() {
     this(new AvroSerializer)
@@ -32,6 +28,7 @@ class AkkaAvroSerializer[T](avroSerializer: AvroSerializer) extends SerializerWi
     o match {
 
       case state: ConversationState => avroSerializer.serialize[ConversationState](state)
+//      case state: ConversationState2 => avroSerializer.serialize[ConversationState2](state)
 
       case _ =>
         throw new IllegalStateException(s"Serialization for $o not supported. Check toBinary in AkkaAvroSerializer.")
@@ -42,6 +39,9 @@ class AkkaAvroSerializer[T](avroSerializer: AvroSerializer) extends SerializerWi
 
     if (manifest == classOf[ConversationState].getName) {
       avroSerializer.deserialize[ConversationState](bytes)
+
+//    } else if (manifest == classOf[ConversationState2].getName) {
+//      avroSerializer.deserialize[ConversationState2](bytes)
 
     } else {
       throw new IllegalStateException(

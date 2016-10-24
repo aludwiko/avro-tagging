@@ -1,8 +1,8 @@
-package com.giampaolotrapasso.avrotagging
+package com.avrotagging
 
 import java.security.PublicKey
 
-import com.giampaolotrapasso.avrotagging.domain._
+import com.avrotagging.domain._
 
 import com.sksamuel.avro4s.{FromValue, ToSchema, ToValue}
 import com.softwaremill.tagging.Tagger
@@ -11,38 +11,6 @@ import org.apache.avro.Schema.Field
 import org.apache.commons.codec.binary.Base64
 import org.joda.time.DateTime
 import org.joda.time.format.ISODateTimeFormat
-
-object CardinalityMapping {
-
-  implicit object CardinalityToSchema extends ToSchema[Cardinality] {
-    override val schema: Schema = Schema.create(Schema.Type.STRING)
-  }
-
-  implicit object CardinalityToValue extends ToValue[Cardinality] {
-    override def apply(value: Cardinality): String = value.toString
-  }
-
-  implicit object CardinalityFromValue extends FromValue[Cardinality] {
-    override def apply(value: Any, field: Field): Cardinality =
-      Cardinality.from(value.toString)
-  }
-}
-
-object VisibilityMapping {
-
-  implicit object VisibilityToSchema extends ToSchema[Visibility] {
-    override val schema: Schema = Schema.create(Schema.Type.STRING)
-  }
-
-  implicit object VisibilityToValue extends ToValue[Visibility] {
-    override def apply(value: Visibility): String = value.toString
-  }
-
-  implicit object VisibilityFromValue extends FromValue[Visibility] {
-    override def apply(value: Any, field: Field): Visibility =
-      Visibility.from(value.toString)
-  }
-}
 
 object DateTimeCustomMapping {
 
