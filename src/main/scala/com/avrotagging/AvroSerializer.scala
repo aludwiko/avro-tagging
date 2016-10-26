@@ -2,7 +2,6 @@ package com.avrotagging
 
 import java.io.ByteArrayOutputStream
 
-import cats.data.Xor
 import com.sksamuel.avro4s._
 
 class AvroSerializer {
@@ -25,12 +24,6 @@ class AvroSerializer {
       }
     } finally {
       inputStream.close()
-    }
-  }
-
-  def deserializeToXor[T: SchemaFor: FromRecord](byteArray: Array[Byte]): Xor[Throwable, T] = {
-    Xor.catchNonFatal {
-      deserialize(byteArray)
     }
   }
 }
