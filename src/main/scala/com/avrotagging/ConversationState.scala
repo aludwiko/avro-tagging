@@ -1,6 +1,20 @@
 package com.avrotagging
 
-import com.avrotagging.domain.{ConversationId, Timestamp, UserId}
+
+import com.avrotagging.tags.{ConversationId, Timestamp, UserId}
+import com.softwaremill.tagging._
+
+trait UserIdTag
+
+trait ConversationIdTag
+
+trait TimestampTag
+
+package object tags{
+  type UserId         = String @@ UserIdTag
+  type ConversationId = String @@ ConversationIdTag
+  type Timestamp      = Long @@ TimestampTag
+}
 
 case class User(userId: UserId, timestamp: Timestamp)
 

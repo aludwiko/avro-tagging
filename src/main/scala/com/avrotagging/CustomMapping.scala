@@ -1,6 +1,6 @@
 package com.avrotagging
 
-import com.avrotagging.domain._
+import com.avrotagging.tags.{ConversationId, Timestamp, UserId}
 import com.sksamuel.avro4s.{FromValue, ToSchema, ToValue}
 import com.softwaremill.tagging.Tagger
 import org.apache.avro.Schema
