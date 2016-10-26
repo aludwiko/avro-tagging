@@ -6,12 +6,9 @@ import com.softwaremill.tagging._
 
 trait UserIdTag
 
-
-
 trait ConversationIdTag
 
 trait TimestampTag
-
 
 package object domain {
 
@@ -20,7 +17,6 @@ package object domain {
   type UserId         = String @@ UserIdTag
   type ConversationId = String @@ ConversationIdTag
   type Timestamp      = Long @@ TimestampTag
-
 
   implicit def toUserId(userId: String): UserId = userId.taggedWith[UserIdTag]
 

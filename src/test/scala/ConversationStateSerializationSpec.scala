@@ -46,5 +46,19 @@ class ConversationStateSerializationSpec extends SpecBase {
       // then
       deserialized should be(state)
     }
+
+
+    "be serialized and deserialized with empty map" in {
+
+      val previousConversations = Conversations()
+      val state = ConversationState("na", previousConversations)
+
+      // when
+      val binary       = serializer.toBinary(state)
+      val deserialized = serializer.fromBinary(binary, state.getClass.getName).asInstanceOf[ConversationState]
+
+      // then
+      deserialized should be(state)
+    }
   }
 }

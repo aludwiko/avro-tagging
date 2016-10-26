@@ -3,13 +3,8 @@ package com.avrotagging
 import akka.serialization.SerializerWithStringManifest
 // IDE will show following import as unused. Don't remove them, otherwise avro4s will not work.
 import com.sksamuel.avro4s._
-import DateTimeCustomMapping._
 import UserIdCustomMapping._
-import MessageIdCustomMapping._
-import MediaIdCustomMapping._
-import DeviceIdCustomMapping._
 import ConversationIdCustomMapping._
-import RequestIdCustomMapping._
 import TimestampCustomMapping._
 
 class AkkaAvroSerializer(avroSerializer: AvroSerializer) extends SerializerWithStringManifest {
