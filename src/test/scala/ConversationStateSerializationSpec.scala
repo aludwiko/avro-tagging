@@ -50,7 +50,7 @@ class ConversationStateSerializationSpec extends SpecBase {
 
     "be serialized and deserialized with empty map" in {
 
-      val previousConversations = Conversations()
+      val previousConversations = Conversations(Map.empty)
       val state = ConversationState("na", previousConversations)
 
       // when

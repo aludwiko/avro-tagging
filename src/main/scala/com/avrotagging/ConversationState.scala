@@ -6,7 +6,7 @@ case class User(userId: UserId, timestamp: Timestamp)
 
 case class Conversation(name: String, conversationId: ConversationId, deliveredTo: List[User])
 
-case class Conversations(conversations: Map[String, Conversation] = Map.empty)
+case class Conversations(conversations: Map[String, Conversation])
 
 case class ConversationState(test: String, previousConversations: Conversations)
 
@@ -16,6 +16,6 @@ case class User2(userId: UserId, timestamp: Timestamp, newField: String = "defau
 
 case class Conversation2(name: String, conversationId: ConversationId, deliveredTo: List[User2])
 
-case class Conversations2(conversations: Map[String, Conversation2])
+case class Conversations2(conversations: Map[String, Conversation2] =  Map.empty)
 
 case class ConversationState2(test: String, previousConversations: Conversations2)
