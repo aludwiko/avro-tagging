@@ -16,7 +16,6 @@ lazy val macwireDependencies = Seq(
 
 lazy val otherDependencies = Seq(
   "org.typelevel"              %% "cats"              % "0.7.0",
-  "io.swagger"                 %% "swagger-play2"     % "1.5.3.2",
   "org.json4s"                 %% "json4s-native"     % "3.3.0",
   "com.github.t3hnar"          % "scala-bcrypt_2.11"  % "2.4",
   "com.sksamuel.avro4s"        %% "avro4s-core"       % "1.6.1",
